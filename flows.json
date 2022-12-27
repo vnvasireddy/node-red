@@ -1,0 +1,2302 @@
+[
+    {
+        "id": "17b008950ca0127a",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cfd7850f9ee5021b",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "209dda4a831da887",
+        "type": "tab",
+        "label": "sourcetimestamp_write_csv",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "bce602ddee98a0fb",
+        "type": "influxdb",
+        "hostname": "http://iplon-pvindia.com",
+        "port": "31086",
+        "protocol": "http",
+        "database": "tata",
+        "name": "tata",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://iplon-pvindia.com:31086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "2ac8e3fa.8b8584",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "ebb1ed1c.5ebe2",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "87d822351ac96499",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "929d3236.90d2",
+        "order": 3,
+        "disp": true,
+        "width": "14",
+        "collapse": false
+    },
+    {
+        "id": "ebb1ed1c.5ebe2",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "929d3236.90d2",
+        "type": "ui_tab",
+        "name": "forecast",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a7ddb8eea38b74df",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "3a27b9acba8ce163",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://148.66.133.102:4842/iSolar/scaback_csv/",
+        "secpol": "None",
+        "secmode": "None",
+        "login": false
+    },
+    {
+        "id": "cb178fa3f456c069",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://iplonopcua.com:4441/iSolar/scaback_csv/[SignAndEncrypt:Basic256Sha256:Binary]",
+        "secpol": "Basic256Sha256",
+        "secmode": "SignAndEncrypt",
+        "none": false,
+        "login": true,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "86218bb148b74fd8",
+        "type": "influxdb in",
+        "z": "17b008950ca0127a",
+        "influxdb": "bce602ddee98a0fb",
+        "name": "tata",
+        "query": "' from(bucket: \\\"'+database+'\\\")  |> range(start: -10m)  |> filter(fn: (r) => r[\"_measurement\"] == \"v\")  |> filter(fn: (r) => r[\"iid\"] == \\\"'+iGate_id+'\\\")  |> filter(fn: (r) => r[\"d\"] == \\\"'+device+'\\\")  |> filter(fn: (r) => r[\"f\"] == \\\"'+field+'\\\")  |> filter(fn: (r) => r[\"_field\"] == \"value\")  |> yield(name: \"last\")'",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "tata",
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "44381413ca782937"
+            ]
+        ]
+    },
+    {
+        "id": "040e773ea419dd51",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "86218bb148b74fd8"
+            ]
+        ]
+    },
+    {
+        "id": "44381413ca782937",
+        "type": "debug",
+        "z": "17b008950ca0127a",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "65823a49e0ef6be5",
+        "type": "file in",
+        "z": "17b008950ca0127a",
+        "name": "tata",
+        "filename": "/home/iplon/tata.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "dca304609641c0c2"
+            ]
+        ]
+    },
+    {
+        "id": "dca304609641c0c2",
+        "type": "json",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 400,
+        "wires": [
+            [
+                "f5b79d8d5d5e72e2"
+            ]
+        ]
+    },
+    {
+        "id": "f5b79d8d5d5e72e2",
+        "type": "debug",
+        "z": "17b008950ca0127a",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b174d7fdb4faf36d",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 740,
+        "wires": [
+            [
+                "36393513674bc0d0"
+            ]
+        ]
+    },
+    {
+        "id": "36393513674bc0d0",
+        "type": "http request",
+        "z": "17b008950ca0127a",
+        "name": "meteoblue",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://my.meteoblue.com/packages/solar-1h_solar-day?lat=11.554161&lon=78.008553&apikey=RtIlaSm8byh3UnFr",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 740,
+        "wires": [
+            [
+                "87569b5e9c0cb01a"
+            ]
+        ]
+    },
+    {
+        "id": "46bbf1d4e5f129c5",
+        "type": "debug",
+        "z": "17b008950ca0127a",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "5d99d4b2562db1b2",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 800,
+        "wires": [
+            [
+                "ba70fd4bf6acc6eb"
+            ]
+        ]
+    },
+    {
+        "id": "ba70fd4bf6acc6eb",
+        "type": "http request",
+        "z": "17b008950ca0127a",
+        "name": "solcast",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.solcast.com.au/weather_sites/b8ce-3551-0cb6-1173/forecasts?format=json",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 380,
+        "y": 800,
+        "wires": [
+            [
+                "880d29aebce69b7c"
+            ]
+        ]
+    },
+    {
+        "id": "880d29aebce69b7c",
+        "type": "debug",
+        "z": "17b008950ca0127a",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "4fdd5b1374fb2d8d",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 860,
+        "wires": [
+            [
+                "91e26037680088c6"
+            ]
+        ]
+    },
+    {
+        "id": "91e26037680088c6",
+        "type": "http request",
+        "z": "17b008950ca0127a",
+        "name": "openweather",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/forecast?lat=70.86&lon=15.11&appid=46c6812fae81fd4de8c90c1a6f765048",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 860,
+        "wires": [
+            [
+                "ed128035806d0127"
+            ]
+        ]
+    },
+    {
+        "id": "ed128035806d0127",
+        "type": "debug",
+        "z": "17b008950ca0127a",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "de6af30ce7c28b63",
+        "type": "csv",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": true,
+        "include_null_values": true,
+        "x": 350,
+        "y": 1280,
+        "wires": [
+            [
+                "3c0410474c739dd3"
+            ]
+        ]
+    },
+    {
+        "id": "87569b5e9c0cb01a",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "meteoblue 1h",
+        "func": "let plantObj\n\nplantObj = []\n\n//for (var j = 0; j < msg.payload[1].length; j++)\n\nfor (var i = 0; i < msg.payload.data_1h.time.length; i++) \n    {\n    var time = msg.payload.data_1h.time[i]\n    var gni_instant = msg.payload.data_1h.gni_instant[i]\n    var gni_backwards = msg.payload.data_1h.gni_backwards[i]\n    var dni_instant = msg.payload.data_1h.dni_instant[i]\n    var dni_backwards = msg.payload.data_1h.dni_backwards[i]\n    var dif_instant = msg.payload.data_1h.dif_instant[i]\n    var dif_backwards = msg.payload.data_1h.dif_backwards[i]\n    var ghi_instant = msg.payload.data_1h.ghi_instant[i]\n    var ghi_backwards = msg.payload.data_1h.ghi_backwards[i]\n    var extraterrestrialradiation_instant = msg.payload.data_1h.extraterrestrialradiation_instant[i]\n    var extraterrestrialradiation_backwards = msg.payload.data_1h.extraterrestrialradiation_backwards[i]\n       \n        \n            var obj = {\n                time,\n                gni_instant,\n                gni_backwards,\n                dni_instant,\n                dni_backwards,\n                dif_instant,\n                dif_backwards,\n                ghi_instant,\n                ghi_backwards,\n                extraterrestrialradiation_instant,\n                extraterrestrialradiation_backwards\n               \n            }\n\n            plantObj.push(obj)\n        }\n    \nmsg.payload = plantObj\n//return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 740,
+        "wires": [
+            [
+                "6947f4d221370ede"
+            ]
+        ]
+    },
+    {
+        "id": "6947f4d221370ede",
+        "type": "csv",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": true,
+        "include_null_values": true,
+        "x": 730,
+        "y": 740,
+        "wires": [
+            [
+                "95419abc3582d908"
+            ]
+        ]
+    },
+    {
+        "id": "95419abc3582d908",
+        "type": "file",
+        "z": "17b008950ca0127a",
+        "name": "meteo",
+        "filename": "/home/iplon/Downloads/meteoblue arken.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 870,
+        "y": 740,
+        "wires": [
+            [
+                "46bbf1d4e5f129c5"
+            ]
+        ]
+    },
+    {
+        "id": "751cae4465589ee7",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1220,
+        "wires": [
+            [
+                "44bdf62ffb14ba4b",
+                "d7d65faaf016a3db"
+            ]
+        ]
+    },
+    {
+        "id": "44bdf62ffb14ba4b",
+        "type": "file in",
+        "z": "17b008950ca0127a",
+        "name": "meta",
+        "filename": "/home/iplon/Downloads/metoblue forecast 14-09-2022.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 210,
+        "y": 1280,
+        "wires": [
+            [
+                "de6af30ce7c28b63"
+            ]
+        ]
+    },
+    {
+        "id": "4b55ffb4aa5645e5",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 660,
+        "wires": [
+            [
+                "172769cb30061e06"
+            ]
+        ]
+    },
+    {
+        "id": "172769cb30061e06",
+        "type": "http request",
+        "z": "17b008950ca0127a",
+        "name": "meteoblue",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://my.meteoblue.com/packages/basic-1h_basic-day_solar-15min?apikey=RtIlaSm8byh3UnFr&lat=10.881943922351383&lon=78.34594984506371&asl=247&format=json&tz=Asia%2FKolkata",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 660,
+        "wires": [
+            [
+                "98972e4b324ee4a8",
+                "ef257a9e82a12199"
+            ]
+        ]
+    },
+    {
+        "id": "5760070d2f999e89",
+        "type": "debug",
+        "z": "17b008950ca0127a",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "98972e4b324ee4a8",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "meteoblue 15m",
+        "func": "let plantObj\n\nplantObj = []\n\n//for (var j = 0; j < msg.payload[1].length; j++)\n\nfor (var i = 0; i < msg.payload.data_xmin.time.length; i++) \n    {\n    var time = msg.payload.data_xmin.time[i]\n    var gni_instant = msg.payload.data_xmin.gni_instant[i]\n   // var gni_backwards = msg.payload.data_xmin.gni_backwards[i]\n    var dni_instant = msg.payload.data_xmin.dni_instant[i]\n    //var dni_backwards = msg.payload.data_xmin.dni_backwards[i]\n    var dif_instant = msg.payload.data_xmin.dif_instant[i]\n    //var dif_backwards = msg.payload.data_xmin.dif_backwards[i]\n    var ghi_instant = msg.payload.data_xmin.ghi_instant[i]\n    //var ghi_backwards = msg.payload.data_xmin.ghi_backwards[i]\n    var extraterrestrialradiation_instant = msg.payload.data_xmin.extraterrestrialradiation_instant[i]\n    //var extraterrestrialradiation_backwards = msg.payload.data_xmin.extraterrestrialradiation_backwards[i]\n       \n        \n            var obj = {\n                time,\n                gni_instant,\n                //gni_backwards,\n                dni_instant,\n                //dni_backwards,\n                dif_instant,\n                //dif_backwards,\n                ghi_instant,\n                //ghi_backwards,\n                extraterrestrialradiation_instant\n                //extraterrestrialradiation_backwards\n               \n            }\n\n            plantObj.push(obj)\n        }\n    \nmsg.payload = plantObj\n//return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 660,
+        "wires": [
+            [
+                "30d3da0f822a00bd"
+            ]
+        ]
+    },
+    {
+        "id": "30d3da0f822a00bd",
+        "type": "csv",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": true,
+        "include_null_values": true,
+        "x": 730,
+        "y": 660,
+        "wires": [
+            [
+                "1df36c35347933fc"
+            ]
+        ]
+    },
+    {
+        "id": "1df36c35347933fc",
+        "type": "file",
+        "z": "17b008950ca0127a",
+        "name": "meteo",
+        "filename": "/home/iplon/Downloads/meteoblue iyy15m.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 870,
+        "y": 660,
+        "wires": [
+            [
+                "5760070d2f999e89"
+            ]
+        ]
+    },
+    {
+        "id": "6ae8db5f9cb874e8",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 1000,
+        "wires": [
+            [
+                "b847333f7d457449"
+            ]
+        ]
+    },
+    {
+        "id": "b847333f7d457449",
+        "type": "http request",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit-arken",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.weatherbit.io/v2.0/forecast/minutely?lat=11.554161&lon=78.008553&key=07ea978e722d44599ecf9fb7fb93fa6d",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 1000,
+        "wires": [
+            [
+                "ea4802261f11aa9a"
+            ]
+        ]
+    },
+    {
+        "id": "eb95eaab9b87adb8",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 1040,
+        "wires": [
+            [
+                "cd8e91e061b51515"
+            ]
+        ]
+    },
+    {
+        "id": "cd8e91e061b51515",
+        "type": "http request",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit history",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.weatherbit.io/v2.0/history/hourly?lat=11.554161&lon=78.008553&start_date=2022-09-07&end_date=2022-09-16&tz=local&key=07ea978e722d44599ecf9fb7fb93fa6d",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 370,
+        "y": 1040,
+        "wires": [
+            [
+                "80d559c0e68e2389"
+            ]
+        ]
+    },
+    {
+        "id": "3ceb296aa2c731f4",
+        "type": "debug",
+        "z": "17b008950ca0127a",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "3c0410474c739dd3",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "meteoblue 15m",
+        "func": "let plantObj\n\nplantObj = []\n\n//for (var j = 0; j < msg.payload.length; j++)\n\nfor (var i = 0; i < msg.payload.length; i++) \n{\n   \n    var time = Date.parse(msg.payload[i].time) / 1000;\n    //new Date(msg.payload[i].time).getTime()\n    var gni_instant = msg.payload[i].gni_instant\n   // var gni_backwards = msg.payload[i].gni_backwards\n    var dni_instant = msg.payload[i].dni_instant\n    //var dni_backwards = msg.payload[i].dni_backwards\n    var dif_instant = msg.payload[i].dif_instant\n    //var dif_backwards = msg.payload[i].dif_backwards\n    var ghi_instant = msg.payload[i].ghi_instant\n    //var ghi_backwards = msg.payload[i].ghi_backwards\n    var extraterrestrialradiation_instant = msg.payload[i].extraterrestrialradiation_instant\n    //var extraterrestrialradiation_backwards = msg.payload[i].extraterrestrialradiation_backwards\n       \n        \n            var obj = {\n                time,\n                gni_instant,\n                //gni_backwards,\n                dni_instant,\n                //dni_backwards,\n                dif_instant,\n                //dif_backwards,\n                ghi_instant,\n                //ghi_backwards,\n                extraterrestrialradiation_instant\n                //extraterrestrialradiation_backwards\n               \n            }\n\n            plantObj.push(obj)\n        }\n    \nmsg.payload = plantObj\nmsg.topic=\"meta\"\n//return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1280,
+        "wires": [
+            [
+                "55dd1c3b2f07610b"
+            ]
+        ]
+    },
+    {
+        "id": "55dd1c3b2f07610b",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "combine",
+        "func": "context.data = context.data || {};\nswitch(msg.topic){\n    case \"meta\":\n        context.data.meta = msg.payload;\n        msg = null;\n        break;\n    case \"site\":\n        context.data.site = msg.payload;\n        msg = null;\n        break;\n}\nif(context.data.meta != null && context.data.site != null){\n    var data_combine = {\n        \"meta\": context.data.meta,\n        \"site\": context.data.site\n       \n    }\n    context.data = null\n    return {payload: data_combine};\n}  ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 1320,
+        "wires": [
+            [
+                "b65c0b78e6a74c72"
+            ]
+        ]
+    },
+    {
+        "id": "bb8d97ccb040fdce",
+        "type": "csv",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": true,
+        "include_null_values": true,
+        "x": 350,
+        "y": 1340,
+        "wires": [
+            [
+                "c4f6daf11d7985b0"
+            ]
+        ]
+    },
+    {
+        "id": "d7d65faaf016a3db",
+        "type": "file in",
+        "z": "17b008950ca0127a",
+        "name": "site",
+        "filename": "/home/iplon/Downloads/site.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 210,
+        "y": 1340,
+        "wires": [
+            [
+                "bb8d97ccb040fdce"
+            ]
+        ]
+    },
+    {
+        "id": "c4f6daf11d7985b0",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "site15m",
+        "func": "let plantObj\n\nplantObj = []\n\n//for (var j = 0; j < msg.payload.length; j++)\n\nfor (var i = 0; i < msg.payload.length; i++) \n{\n   \n    var time = Date.parse(msg.payload[i].Time) / 1000;\n    //new Date(msg.payload[i].time).getTime()\n    var TOTAL_PAC = msg.payload[i].TOTAL_PAC\n   // var gni_backwards = msg.payload[i].gni_backwards\n    var Solar_Radiation = msg.payload[i].Solar_Radiation\n    \n       \n        \n            var obj = {\n                time,\n                TOTAL_PAC,\n               Solar_Radiation\n            }\n\n            plantObj.push(obj)\n        }\n    \nmsg.payload = plantObj\nmsg.topic=\"site\"\n//return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 1340,
+        "wires": [
+            [
+                "55dd1c3b2f07610b"
+            ]
+        ]
+    },
+    {
+        "id": "b65c0b78e6a74c72",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "comparison",
+        "func": "let plantObj\n\nplantObj = []\n\n//for (var j = 0; j < msg.payload.length; j++)\n\nfor (var i = 0; i < msg.payload.meta.length; i++) \n{\n   var deviation;\n    var meta_time = msg.payload.meta[i].time\n    var site_time = msg.payload.site[i].time\n    var ghi_instant = msg.payload.meta[i].ghi_instant\n    var solar_radiation = msg.payload.site[i].Solar_Radiation\n    if (meta_time == site_time)\n       {\n        if (ghi_instant > solar_radiation)\n        { deviation = ghi_instant - solar_radiation}\n        else\n        { deviation = solar_radiation - ghi_instant }\n            var obj = {\n                time:meta_time*1000,\n                solar_radiation,\n               ghi_instant,\n                deviation\n            }\n\n            plantObj.push(obj)\n        }\n}\nmsg.payload = plantObj\n\n//return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1320,
+        "wires": [
+            [
+                "97bca6c660083ac7"
+            ]
+        ]
+    },
+    {
+        "id": "97bca6c660083ac7",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "graph generate",
+        "func": "\nfunction toTimestamp(strDate){\n     var datum = Date.parse(strDate);\n     return datum/1000;\n    }\nvar payload=msg.payload;\nvar data_out=[];\nvar a1=[];\nvar a2=[];\nfor(let i=0;i<payload.length;i++)\n{\n    var timestamp=payload[i].time\n\n\n    var temp1 = { \"x\": timestamp, \"y\": payload[i].solar_radiation };\n    var temp2 = { \"x\": timestamp, \"y\": payload[i].ghi_instant }\n    \n\na1.push(temp1);\na2.push(temp2);\n \n \n //\n \n \n}\n\ndata_out=[a1,a2];\nmsg.payload=[{\n\"series\": [\"site_irradiation\",\"meteoblue_irradiation\"],\n\"data\":data_out,\n    \"labels\": [\"site_irradiation\",\"meteoblue_irradiation\"]\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 1320,
+        "wires": [
+            [
+                "24a5501f6bfd3a25"
+            ]
+        ]
+    },
+    {
+        "id": "24a5501f6bfd3a25",
+        "type": "ui_chart",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "group": "2ac8e3fa.8b8584",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "meteoblue Vs site data 14/9/2022(Arken)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "2000",
+        "removeOlder": "2",
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#cc220f",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1260,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8c184f9ef5f325cf",
+        "type": "csv",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": true,
+        "include_null_values": true,
+        "x": 450,
+        "y": 1160,
+        "wires": [
+            [
+                "86c4d709dcc0db87"
+            ]
+        ]
+    },
+    {
+        "id": "68f05a0353bd3aec",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 1160,
+        "wires": [
+            [
+                "f7a6c596cfb382a8"
+            ]
+        ]
+    },
+    {
+        "id": "f7a6c596cfb382a8",
+        "type": "file in",
+        "z": "17b008950ca0127a",
+        "name": "solcast",
+        "filename": "/home/iplon/Downloads/solcast_check.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 320,
+        "y": 1160,
+        "wires": [
+            [
+                "8c184f9ef5f325cf"
+            ]
+        ]
+    },
+    {
+        "id": "86c4d709dcc0db87",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "solcast",
+        "func": "let plantObj\n\nplantObj = []\n\n//for (var j = 0; j < msg.payload.length; j++)\n\nfor (var i = 0; i < msg.payload.length; i++) \n{\n   \n    var time = Date.parse(msg.payload[i].Time) / 1000;\n    //new Date(msg.payload[i].time).getTime()\n    var ghi = msg.payload[i].Ghi\n   // var gni_backwards = msg.payload[i].gni_backwards\n    //var dni_instant = msg.payload[i].dni_instant\n    //var dni_backwards = msg.payload[i].dni_backwards\n    //var dif_instant = msg.payload[i].dif_instant\n    //var dif_backwards = msg.payload[i].dif_backwards\n    //var ghi_instant = msg.payload[i].ghi_instant\n    //var ghi_backwards = msg.payload[i].ghi_backwards\n    var radiation = msg.payload[i].Solar_Radiation\n    //var extraterrestrialradiation_backwards = msg.payload[i].extraterrestrialradiation_backwards\n       \n        \n            var obj = {\n                time:time*1000,\n                ghi,\n                radiation\n               \n            }\n\n            plantObj.push(obj)\n        }\n    \nmsg.payload = plantObj\nmsg.topic=\"meta\"\n//return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 1160,
+        "wires": [
+            [
+                "6f6bfaf9af58bedc"
+            ]
+        ]
+    },
+    {
+        "id": "6f6bfaf9af58bedc",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "graph generate",
+        "func": "\nfunction toTimestamp(strDate){\n     var datum = Date.parse(strDate);\n     return datum/1000;\n    }\nvar payload=msg.payload;\nvar data_out=[];\nvar a1=[];\nvar a2=[];\nfor(let i=0;i<payload.length;i++)\n{\n    var timestamp=payload[i].time\n\n\n    var temp1 = { \"x\": timestamp, \"y\": payload[i].radiation };\n    var temp2 = { \"x\": timestamp, \"y\": payload[i].ghi }\n    \n\na1.push(temp1);\na2.push(temp2);\n \n \n //\n \n \n}\n\ndata_out=[a1,a2];\nmsg.payload=[{\n\"series\": [\"arken\",\"solcast\"],\n\"data\":data_out,\n    \"labels\": [\"arken\",\"solcast\"]\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1160,
+        "wires": [
+            [
+                "e23717aaefbd8f37"
+            ]
+        ]
+    },
+    {
+        "id": "e23717aaefbd8f37",
+        "type": "ui_chart",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "group": "87d822351ac96499",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "solar Vs ghi-solcast 15/09/2022",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "2000",
+        "removeOlder": "1",
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#cc220f",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1130,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ea4802261f11aa9a",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit",
+        "func": "let plantObj\n\nplantObj = []\n\n//for (var j = 0; j < msg.payload.length; j++)\n\nfor (var i = 0; i < msg.payload.data.length; i++) \n{\n   \n    var time = new Date(msg.payload.data[i].timestamp_local)\n    //new Date(msg.payload[i].time).getTime()\n    var solar_rad = msg.payload.data[i].solar_rad\n   // var gni_backwards = msg.payload[i].gni_backwards\n    //var dni_instant = msg.payload[i].dni_instant\n    //var dni_backwards = msg.payload[i].dni_backwards\n    //var dif_instant = msg.payload[i].dif_instant\n    //var dif_backwards = msg.payload[i].dif_backwards\n    //var ghi_instant = msg.payload[i].ghi_instant\n    //var ghi_backwards = msg.payload[i].ghi_backwards\n    var ghi = msg.payload.data[i].ghi\n    var dhi = msg.payload.data[i].dhi\n    //var extraterrestrialradiation_backwards = msg.payload[i].extraterrestrialradiation_backwards\n       \n        \n            var obj = {\n                time:time,\n                ghi,\n               solar_rad,\n               dhi\n               \n            }\n\n            plantObj.push(obj)\n        }\n    \nmsg.payload = plantObj\nmsg.topic=\"meta\"\n//return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 1000,
+        "wires": [
+            [
+                "5d0dc3e36709e7e1"
+            ]
+        ]
+    },
+    {
+        "id": "0de5040534685b16",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "graph generate",
+        "func": "\nfunction toTimestamp(strDate){\n     var datum = Date.parse(strDate);\n     return datum/1000;\n    }\nvar payload=msg.payload;\nvar data_out=[];\nvar a1=[];\nvar a2=[];\nvar a3 =[];\nvar a4 = [];\nvar a5 = [];\nfor(let i=0;i<payload.length;i++)\n{\n    var timestamp=payload[i].time\n\n\n    var temp1 = { \"x\": timestamp, \"y\": payload[i].radiation};\n    var temp2 = { \"x\": timestamp, \"y\": payload[i].ghi };\n    var temp3 = { \"x\": timestamp, \"y\": payload[i].dhi };\n    var temp4 = { \"x\": timestamp, \"y\": payload[i].site_solar };\n    var temp5 = { \"x\": timestamp, \"y\": payload[i].calc_irr };\n\na1.push(temp1);\na2.push(temp2);\na3.push(temp3);\na4.push(temp4);\n    a5.push(temp5); \n //\n \n \n}\n\ndata_out=[a1,a2,a3,a4,a5];\nmsg.payload=[{\n\"series\": [\"api_solar\",\"ghi\",\"dhi\",\"arken_solar\",\"cal_irr\"],\n\"data\":data_out,\n    \"labels\": [\"api_solar\",\"ghi\",\"dhi\",\"arken\",\"cac_irr\"]\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 1100,
+        "wires": [
+            [
+                "1c1e25695a48e3b5"
+            ]
+        ]
+    },
+    {
+        "id": "1c1e25695a48e3b5",
+        "type": "ui_chart",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "group": "87d822351ac96499",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "solar Vs ghi- weather bit-his 15/09/2022",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "2000",
+        "removeOlder": "2",
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#cc220f",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1100,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "347cbaa21b6e3820",
+        "type": "debug",
+        "z": "17b008950ca0127a",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "5d0dc3e36709e7e1",
+        "type": "csv",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": true,
+        "include_null_values": true,
+        "x": 750,
+        "y": 1000,
+        "wires": [
+            [
+                "9a4b507005964a5b"
+            ]
+        ]
+    },
+    {
+        "id": "9a4b507005964a5b",
+        "type": "file",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit",
+        "filename": "/home/iplon/Downloads/weatherbit1.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 910,
+        "y": 1000,
+        "wires": [
+            [
+                "347cbaa21b6e3820"
+            ]
+        ]
+    },
+    {
+        "id": "80d559c0e68e2389",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit",
+        "func": "let plantObj\n\nplantObj = []\n\n//for (var j = 0; j < msg.payload.length; j++)\n\nfor (var i = 0; i < msg.payload.data.length; i++) \n{\n   \n    var time = new Date(msg.payload.data[i].timestamp_local)\n    //new Date(msg.payload[i].time).getTime()\n    var solar_rad = msg.payload.data[i].solar_rad\n   // var gni_backwards = msg.payload[i].gni_backwards\n    //var dni_instant = msg.payload[i].dni_instant\n    //var dni_backwards = msg.payload[i].dni_backwards\n    //var dif_instant = msg.payload[i].dif_instant\n    //var dif_backwards = msg.payload[i].dif_backwards\n    //var ghi_instant = msg.payload[i].ghi_instant\n    //var ghi_backwards = msg.payload[i].ghi_backwards\n    var ghi = msg.payload.data[i].ghi\n    var dhi = msg.payload.data[i].dhi\n    //var extraterrestrialradiation_backwards = msg.payload[i].extraterrestrialradiation_backwards\n       \n        \n            var obj = {\n                time:time,\n                ghi,\n               solar_rad,\n               dhi\n               \n            }\n\n            plantObj.push(obj)\n        }\n    \nmsg.payload = plantObj\nmsg.topic=\"meta\"\n//return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 1040,
+        "wires": [
+            [
+                "1f5e2f54a4bc0ddc"
+            ]
+        ]
+    },
+    {
+        "id": "1f5e2f54a4bc0ddc",
+        "type": "csv",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": true,
+        "include_null_values": true,
+        "x": 710,
+        "y": 1040,
+        "wires": [
+            [
+                "2cb650f5c042d026"
+            ]
+        ]
+    },
+    {
+        "id": "2cb650f5c042d026",
+        "type": "file",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit",
+        "filename": "/home/iplon/Downloads/weatherbit_his.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 870,
+        "y": 1040,
+        "wires": [
+            [
+                "3ceb296aa2c731f4"
+            ]
+        ]
+    },
+    {
+        "id": "fc1f894ae3bdb4cb",
+        "type": "csv",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": true,
+        "include_null_values": true,
+        "x": 470,
+        "y": 1100,
+        "wires": [
+            [
+                "d125653dc3bbde37"
+            ]
+        ]
+    },
+    {
+        "id": "31cb7872b59e1a80",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 1100,
+        "wires": [
+            [
+                "dc14997c5691e29c"
+            ]
+        ]
+    },
+    {
+        "id": "dc14997c5691e29c",
+        "type": "file in",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit",
+        "filename": "/home/iplon/Downloads/weathervsarken.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 330,
+        "y": 1100,
+        "wires": [
+            [
+                "fc1f894ae3bdb4cb"
+            ]
+        ]
+    },
+    {
+        "id": "d125653dc3bbde37",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit",
+        "func": "let plantObj\n\nplantObj = []\n\n//for (var j = 0; j < msg.payload.length; j++)\n\nfor (var i = 0; i < msg.payload.length; i++) \n{\n   \n    var time = Date.parse(msg.payload[i].time_loa) / 1000;\n    //new Date(msg.payload[i].time).getTime()\n    var ghi = msg.payload[i].ghi\n   // var gni_backwards = msg.payload[i].gni_backwards\n    //var dni_instant = msg.payload[i].dni_instant\n    //var dni_backwards = msg.payload[i].dni_backwards\n    //var dif_instant = msg.payload[i].dif_instant\n    //var dif_backwards = msg.payload[i].dif_backwards\n    //var ghi_instant = msg.payload[i].ghi_instant\n    //var ghi_backwards = msg.payload[i].ghi_backwards\n    var radiation = msg.payload[i].solar_rad\n    var dhi = msg.payload[i].dhi\n        var site_solar = msg.payload[i].site_solar\n    var calc_irr = radiation-dhi\n    //var extraterrestrialradiation_backwards = msg.payload[i].extraterrestrialradiation_backwards\n       \n        \n            var obj = {\n                time:time*1000,\n                ghi,\n                dhi,\n                site_solar,\n                radiation,\n                calc_irr\n               \n            }\n\n            plantObj.push(obj)\n        }\n    \nmsg.payload = plantObj\nmsg.topic=\"meta\"\n//return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 1100,
+        "wires": [
+            [
+                "0de5040534685b16"
+            ]
+        ]
+    },
+    {
+        "id": "b1f1f9d21aeb584a",
+        "type": "inject",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 920,
+        "wires": [
+            [
+                "8e726d0bb33dda18"
+            ]
+        ]
+    },
+    {
+        "id": "8e726d0bb33dda18",
+        "type": "http request",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit-iyyermalai",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.weatherbit.io/v2.0/forecast/hourly?lat=10.881943922351383&lon=78.34594984506371&key=07ea978e722d44599ecf9fb7fb93fa6d",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 380,
+        "y": 920,
+        "wires": [
+            [
+                "ed128035806d0127"
+            ]
+        ]
+    },
+    {
+        "id": "be35714edeb2ba3d",
+        "type": "function",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit",
+        "func": "let plantObj\n\nplantObj = []\n\n//for (var j = 0; j < msg.payload.length; j++)\n\nfor (var i = 0; i < msg.payload.data.length; i++) \n{\n   \n    var time = new Date(msg.payload.data[i].timestamp_local)\n    //new Date(msg.payload[i].time).getTime()\n    var solar_rad = msg.payload.data[i].solar_rad\n   // var gni_backwards = msg.payload[i].gni_backwards\n    //var dni_instant = msg.payload[i].dni_instant\n    //var dni_backwards = msg.payload[i].dni_backwards\n    //var dif_instant = msg.payload[i].dif_instant\n    //var dif_backwards = msg.payload[i].dif_backwards\n    //var ghi_instant = msg.payload[i].ghi_instant\n    //var ghi_backwards = msg.payload[i].ghi_backwards\n    var ghi = msg.payload.data[i].ghi\n    var dhi = msg.payload.data[i].dhi\n    //var extraterrestrialradiation_backwards = msg.payload[i].extraterrestrialradiation_backwards\n       \n        \n            var obj = {\n                time:time,\n                ghi,\n               solar_rad,\n               dhi\n               \n            }\n\n            plantObj.push(obj)\n        }\n    \nmsg.payload = plantObj\nmsg.topic=\"meta\"\n//return null;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 920,
+        "wires": [
+            [
+                "a6974b9500ec8eee"
+            ]
+        ]
+    },
+    {
+        "id": "6f381ab4397670d7",
+        "type": "debug",
+        "z": "17b008950ca0127a",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "a6974b9500ec8eee",
+        "type": "csv",
+        "z": "17b008950ca0127a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": true,
+        "include_null_values": true,
+        "x": 750,
+        "y": 920,
+        "wires": [
+            [
+                "26c9c384084345c7"
+            ]
+        ]
+    },
+    {
+        "id": "26c9c384084345c7",
+        "type": "file",
+        "z": "17b008950ca0127a",
+        "name": "weatherbit",
+        "filename": "/home/iplon/Downloads/weatherbit_iyy.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 910,
+        "y": 920,
+        "wires": [
+            [
+                "6f381ab4397670d7"
+            ]
+        ]
+    },
+    {
+        "id": "ef257a9e82a12199",
+        "type": "debug",
+        "z": "17b008950ca0127a",
+        "name": "debug 23",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "aea0f6b90c9e8c33",
+        "type": "inject",
+        "z": "209dda4a831da887",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "36afd6ba22e2758f"
+            ]
+        ]
+    },
+    {
+        "id": "36afd6ba22e2758f",
+        "type": "change",
+        "z": "209dda4a831da887",
+        "name": "B11_INV1_ON",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=2;s=B11_INV1_ON",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "datatype",
+                "pt": "msg",
+                "to": "int64",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "12e564b1079aa8ab"
+            ]
+        ]
+    },
+    {
+        "id": "12e564b1079aa8ab",
+        "type": "OpcUa-Client",
+        "z": "209dda4a831da887",
+        "endpoint": "3a27b9acba8ce163",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": "1",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "name": "",
+        "x": 540,
+        "y": 100,
+        "wires": [
+            [
+                "875e7d8ed84e71a7"
+            ]
+        ]
+    },
+    {
+        "id": "09dba3b59367123d",
+        "type": "debug",
+        "z": "209dda4a831da887",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "39b83b49d0bb3ca7",
+        "type": "file",
+        "z": "209dda4a831da887",
+        "name": "",
+        "filename": "C:\\Users\\HP\\rangini.py",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "197b45edcccb2b57"
+            ]
+        ]
+    },
+    {
+        "id": "875e7d8ed84e71a7",
+        "type": "template",
+        "z": "209dda4a831da887",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "python",
+        "syntax": "mustache",
+        "template": "import time\nimport csv\nimport pandas as pd\nimport csv\nimport xlsxwriter\nimport pandas as pd\n\ni =0\nsts_list = []\n\nsts = (\"\"\"{{sourceTimestamp}}\"\"\")\nserver_ts  = (\"\"\"{{serverTimestamp}}\"\"\")\nvalue = (\"\"\"{{payload}}\"\"\")\nsts_list.append(sts)\n#print(\"Value : \",value,\"--------SourceTimestamp : \",sts,\"--------ServerTimestamp : \", server_ts)\nprint(value)\nprint(sts)",
+        "output": "str",
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "39b83b49d0bb3ca7"
+            ]
+        ]
+    },
+    {
+        "id": "197b45edcccb2b57",
+        "type": "exec",
+        "z": "209dda4a831da887",
+        "command": "python3 rangini.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 490,
+        "y": 200,
+        "wires": [
+            [
+                "09dba3b59367123d",
+                "1f57516f35d1c6e5",
+                "54e52e0412acfc8d"
+            ],
+            [
+                "09dba3b59367123d"
+            ],
+            [
+                "09dba3b59367123d"
+            ]
+        ]
+    },
+    {
+        "id": "1f57516f35d1c6e5",
+        "type": "file",
+        "z": "209dda4a831da887",
+        "name": "",
+        "filename": "B11_INV1_ON_OFF_STATUS_1.txt",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 760,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54e52e0412acfc8d",
+        "type": "file",
+        "z": "209dda4a831da887",
+        "name": "",
+        "filename": "B11_INV1_ON_OFF_STATUS_1.xls",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 770,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b73b37f1683113c0",
+        "type": "inject",
+        "z": "209dda4a831da887",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "3c10aa19a6747c17"
+            ]
+        ]
+    },
+    {
+        "id": "3c10aa19a6747c17",
+        "type": "change",
+        "z": "209dda4a831da887",
+        "name": "B11_INV1_PAC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ns=2;s=B11_IO_ITF_OTI",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "datatype",
+                "pt": "msg",
+                "to": "int64",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 400,
+        "wires": [
+            [
+                "7c09b2b7fba53465"
+            ]
+        ]
+    },
+    {
+        "id": "7c09b2b7fba53465",
+        "type": "OpcUa-Client",
+        "z": "209dda4a831da887",
+        "endpoint": "3a27b9acba8ce163",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": "1",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "name": "",
+        "x": 560,
+        "y": 400,
+        "wires": [
+            [
+                "ada9309e96e112a5"
+            ]
+        ]
+    },
+    {
+        "id": "ada9309e96e112a5",
+        "type": "debug",
+        "z": "209dda4a831da887",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f6a9b354c75dd762",
+        "type": "OpcUa-Client",
+        "z": "209dda4a831da887",
+        "endpoint": "cb178fa3f456c069",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "name": "",
+        "x": 720,
+        "y": 580,
+        "wires": [
+            [
+                "c895fed2fb567de9",
+                "4d099161bf104b9c"
+            ]
+        ]
+    },
+    {
+        "id": "4d099161bf104b9c",
+        "type": "debug",
+        "z": "209dda4a831da887",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "c895fed2fb567de9",
+        "type": "function",
+        "z": "209dda4a831da887",
+        "name": "",
+        "func": "//var myDate=new Date(msg.sourceTimestamp).getTime();\nvar dateUTC = new Date(msg.sourceTimestamp).toLocaleString(\"en-US\", {timeZone: 'Asia/Kolkata'})\n//myDateFormat = myDate.getFullYear()+\"-\"+(\"0\" + (myDate.getMonth() + 1)).slice(-2)+\"-\"+(\"0\" + myDate.getDate()).slice(-2)+\" \"+(\"0\" + myDate.getHours()).slice(-2)+\":\"+(\"0\" + myDate.getMinutes()).slice(-2)+\":\"+(\"0\" + myDate.getSeconds()).slice(-2)\nif (msg.payload==null)\n\n{(msg.payload=\"null\")&&(dateUTC=0)}\nvar tag=msg.topic.split(\"ns=2;s=\");\nvar obj ={\nvalue:msg.payload,\ntag:tag[1],\ntime:dateUTC\n    \n}\nmsg.payload=obj\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 580,
+        "wires": [
+            [
+                "87f236d216a701d3"
+            ]
+        ]
+    },
+    {
+        "id": "a3f395e6574f70e5",
+        "type": "change",
+        "z": "209dda4a831da887",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 580,
+        "wires": [
+            [
+                "f6a9b354c75dd762"
+            ]
+        ]
+    },
+    {
+        "id": "b6c34341872ca3fb",
+        "type": "function",
+        "z": "209dda4a831da887",
+        "name": "node ids",
+        "func": "var array=[\n  \"ns=2;s=B01_INV1_AC_VOLTAGE_R;datatype=Double\",\n  \"ns=2;s=B01_INV1_AC_VOLTAGE_Y;datatype=Double\",\n  \"ns=2;s=B01_INV1_AC_VOLTAGE_B;datatype=Double\",\n  \"ns=2;s=B01_INV1_AC_CURRENT_R;datatype=Double\",\n  \"ns=2;s=B01_INV1_AC_CURRENT_Y;datatype=Double\",                          \n  \"ns=2;s=B01_INV1_AC_CURRENT_B;datatype=Double\",                         \n  \"ns=2;s=B01_INV1_ACTIVE_POWER;datatype=Double\",                          \n  \"ns=2;s=B01_INV1_FREQUENCY;datatype=Double\",                         \n  \"ns=2;s=B01_INV1_REACTIVE_POWER;datatype=Double\",                        \n  \"ns=2;s=B01_INV1_DC_CURRENT;datatype=Double\",                            \n  \"ns=2;s=B01_INV1_POWER_DC;datatype=Double\",\n  \"ns=2;s=B01_INV1_IGBT_TEMPERATURE;datatype=Double\",                      \n    \"ns=2;s=B01_INV1_INVERTER_FAIL;datatype=Double\" ,                       \n    \"ns=2;s=B01_INV1_INVERTER_ALARM ;datatype=Double\" ,                      \n    \"ns=2;s=B01_INV1_TOTAL_ENERGY_EXPORT_kWh;datatype=Double\",             \n    \"ns=2;s=B01_INV1_TOTAL_ENERGY_EXPORT_MWh;datatype=Double\",\n    \"ns=2;s=B01_INV1_TOTAL_ENERGY_EXPORT_GWh;datatype=Double\",              \n    \"ns=2;s=B01_INV1_TOTAL_ENERGY_EXPORT_DAY;datatype=Double\" ,             \n    \"ns=2;s=B01_INV1_VOLTAGE_DC;datatype=Double\",                            \n    \"ns=2;s=B01_INV1_PV_STATUS;datatype=Double\" ,                          \n    \"ns=2;s=B01_INV1_INVERTER_CONTROL_UNIT_FAULT_CODE_LAST;datatype=Double\",\n    \"ns=2;s=B01_INV1_INVERTER_CONTROL_UNIT_ALARM_1;datatype=Double \"  ,     \n    \"ns=2;s=B01_INV1_PR;datatype=Double\"  ,                            \n    \"ns=2;s=B01_INV1_START_TIME;datatype=Double \"  ,                         \n    \"ns=2;s=B01_INV1_STOP_TIME ;datatype=Double \"  ,                        \n    \"ns=2;s=B01_INV1_SMU01_IDC ;datatype=Double \"  ,                       \n    \"ns=2;s=B01_INV1_SMU02_IDC ;datatype=Double \"  ,                       \n    \"ns=2;s=B01_INV1_SMU03_IDC ;datatype=Double \"  ,                        \n    \"ns=2;s=B01_INV1_SMU04_IDC ;datatype=Double \"  ,                        \n    \"ns=2;s=B01_INV1_SMU05_IDC ;datatype=Double \"  ,                        \n    \"ns=2;s=B01_INV1_SMU06_IDC ;datatype=Double \"  ,                        \n    \"ns=2;s=B01_INV1_SMU07_IDC ;datatype=Double \"   ,                       \n    \"ns=2;s=B01_INV1_SMU08_IDC ;datatype=Double \"   ,                      \n    \"ns=2;s=B01_INV1_SMU33_IDC ;datatype=Double \"\n\n    ]\n   \n    msg.payload=array\n    \n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 580,
+        "wires": [
+            [
+                "41408160fd247044"
+            ]
+        ]
+    },
+    {
+        "id": "41408160fd247044",
+        "type": "function",
+        "z": "209dda4a831da887",
+        "name": "topic",
+        "func": "for(var i = 0; i < msg.payload.length; i++)\n{\n    var obj={};\n\nobj.payload= {\n   id: msg.payload[i]\n    \n}\n\nnode.send(obj)\n}\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 580,
+        "wires": [
+            [
+                "a3f395e6574f70e5"
+            ]
+        ]
+    },
+    {
+        "id": "a24922c5fc6e335c",
+        "type": "file",
+        "z": "209dda4a831da887",
+        "name": "opcua.csv",
+        "filename": "/usr/src/node-red/opcua1.csv",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 740,
+        "y": 660,
+        "wires": [
+            [
+                "4d099161bf104b9c"
+            ]
+        ]
+    },
+    {
+        "id": "6b1e0771bd088bbf",
+        "type": "file in",
+        "z": "209dda4a831da887",
+        "name": "opcua.csv",
+        "filename": "/usr/src/node-red/opcua1.csv",
+        "format": "lines",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 440,
+        "y": 760,
+        "wires": [
+            [
+                "dbfeca31519350cf"
+            ]
+        ]
+    },
+    {
+        "id": "cc780d76b9563ec4",
+        "type": "inject",
+        "z": "209dda4a831da887",
+        "name": "1) Insert nodeId items",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 240,
+        "y": 760,
+        "wires": [
+            [
+                "6b1e0771bd088bbf"
+            ]
+        ]
+    },
+    {
+        "id": "e7841cd1fc08d831",
+        "type": "debug",
+        "z": "209dda4a831da887",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "dbfeca31519350cf",
+        "type": "csv",
+        "z": "209dda4a831da887",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": true,
+        "x": 590,
+        "y": 760,
+        "wires": [
+            [
+                "fc3f01b0be51868b"
+            ]
+        ]
+    },
+    {
+        "id": "87f236d216a701d3",
+        "type": "csv",
+        "z": "209dda4a831da887",
+        "name": "",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": "once",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": true,
+        "x": 1050,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1103c4df65924c2f",
+        "type": "catch",
+        "z": "209dda4a831da887",
+        "name": "",
+        "scope": [
+            "f6a9b354c75dd762"
+        ],
+        "uncaught": false,
+        "x": 570,
+        "y": 480,
+        "wires": [
+            [
+                "74625adeea54414d"
+            ]
+        ]
+    },
+    {
+        "id": "74625adeea54414d",
+        "type": "debug",
+        "z": "209dda4a831da887",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "fc3f01b0be51868b",
+        "type": "function",
+        "z": "209dda4a831da887",
+        "name": "topic",
+        "func": "let plantObj\n\nplantObj = []\n\nfor(var i = 0; i < msg.payload.length; i++)\n{ \n        var Time=msg.payload[i].time ;\n        var time;\n         if (Time!=0)\n         \n  {  time=msg.payload[i].time}\n\n\nif ((msg.payload[i].value==\"null\")&&(msg.payload[i].time==0))\n\n   {        \n          Time=time\n       \n   }\n\n\nobj={ \n\n    value:msg.payload[i].value,\n    tag:msg.payload[i].tag,\n    Time\n}\n\nplantObj.push(obj)\n}\n\n\nmsg.payload =plantObj\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 760,
+        "wires": [
+            [
+                "e7841cd1fc08d831"
+            ]
+        ]
+    },
+    {
+        "id": "47b01706822531f4",
+        "type": "inject",
+        "z": "209dda4a831da887",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 580,
+        "wires": [
+            [
+                "b6c34341872ca3fb"
+            ]
+        ]
+    }
+]
